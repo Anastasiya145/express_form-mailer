@@ -1,64 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📧 Form Mailer App
 
-## Available Scripts
+Welcome to the **Form Mailer App**! This is a simple backend application built with **Node.js** and **Express**. It handles form submissions from a frontend and sends the data via email using an email service Resend.
 
-In the project directory, you can run:
+## 🛠 Project Structure
 
-### `npm start`
+- **Backend**: Node.js + Express
+- **Email Service**: Resend API for sending emails.
+  
+## ⭐ Features
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Form Submission**: Receives form data (e.g., name, email, subject, message) and sends it to a designated email.
+- **Error Handling**: Proper error responses for missing parameters or issues during email delivery.
+- **Not Found Route**: Returns a `404 Not Found` error for undefined routes.
+- **Global Error Handling**: Catches and logs all server-side errors, returning a `500 Internal Server Error` message when necessary.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## 🔧 Setup & Installation
 
-### `npm test`
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/yourusername/form-mailer-app.git
+    ```
+   
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Set up your environment variables in a `.env` file:
+    ```plaintext
+    RESEND_API_KEY=your_resend_api_key
+    MY_EMAIL=your_destination_email
+    ```
 
-### `npm run build`
+4. Start the server:
+    ```bash
+    npm start
+    ```
+    The server will run on `http://localhost:4000`.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔗 Live Demo
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- **Backend**: [Sign-In App (Server)](https://express-form-mailer.vercel.app/)
+- **Frontend (example where this API was used)**: [Sign-In App (Client)](https://anastasiya145.github.io/portfolio_bulma)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject-www`
+- **Submit Form**: Send a `POST` request to `/send` with the form data:
+    ```json
+    {
+      "email": "sender@example.com",
+      "name": "John Doe",
+      "subject": "Contact Request",
+      "message": "Hello! I would like to get in touch."
+    }
+    ```
+    The server will process the request and send an email to the configured address.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Error Responses**:
+    - `400 Bad Request`: Returned if any required fields are missing in the form.
+    - `404 Not Found`: If a route does not exist.
+    - `500 Internal Server Error`: If something goes wrong on the server.
 
-This is a thin wrapper around create-react-app's `eject` command. There is currently not an `eject` option for create-node-app.
+## 📬 Contact Me
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[![Linkedin Badge](https://img.shields.io/badge/-linkedin-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/anastasiya-ivanova-494567109/)
